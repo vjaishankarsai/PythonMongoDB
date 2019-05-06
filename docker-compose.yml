@@ -1,0 +1,17 @@
+version: '3'
+services:
+  python:
+    image: py_image
+    container_name: py_container
+    command: tail -F sleep infinity
+    networks:
+      - jai_n
+  mongo:
+    image: mongo
+    container_name: mongo_container
+    networks:
+      - jai_n
+    ports:
+      - "27017:27017"
+
+networks:
