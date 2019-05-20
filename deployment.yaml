@@ -12,7 +12,8 @@ spec:
       containers:
       - name: py
         image: vjaishankarsai/pyimage:first
-        command: ["tail -F sleep infinity"]
+        command: ["/bin/sh"]
+        args: ["tail -F sleep infinity"]
         ports:
         - containerPort: 85
       - name: mongo
